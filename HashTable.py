@@ -48,6 +48,6 @@ class HashTable:
 
     def __getitem__(self, item):
         return self.get(key)
-    
+
     def __setitem__(self, key, data):
-        set.put(key, data)
+        self.put(key, data)
