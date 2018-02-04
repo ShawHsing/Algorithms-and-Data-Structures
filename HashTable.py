@@ -28,3 +28,26 @@ class HashTable:
 
     def rehash(self, old_hash,size):
         return (old_hash + 1) % size
+
+    def get(self,key):
+        star_slot = self.hash_function(key, len(self.slots))
+
+        data = None
+        stop = False
+        found = False
+        position = star_slot
+        while self.slots[position] != None and not found and not stop:
+            if self.slots[position] == key:
+                found = True
+                data =self.data[position]
+            else:
+                position = self.rehash(position, len(self.slots))
+                if position == star_slot:
+                    stop = True
+        return data
+
+    def __getitem__(self, item):
+        return self.get(key)
+    
+    def __setitem__(self, key, data):
+        set.put(key, data)
