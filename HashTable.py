@@ -46,7 +46,7 @@ class HashTable:
                     stop = True
         return data
 
-    def __getitem__(self, item):
+    def __getitem__(self, key):
         return self.get(key)
 
     def __setitem__(self, key, data):
