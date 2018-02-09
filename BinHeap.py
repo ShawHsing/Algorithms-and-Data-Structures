@@ -32,19 +32,10 @@ class BinHeap:
         self.heap_list.pop()
         self.perc_down(1)
         return  ret_val
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def build_heap(self, a_list):
+        i = len(a_list) // 2
+        self.current_size = len(a_list)
+        self.heap_list = [0] + a_list[:]
+        while (i > 0):
+            self.perc_down(i)
+            i = i -1
