@@ -32,6 +32,19 @@ class BinaryTree:
     def get_root_val(self):
         return self.key
 
+    def preorder(self):
+        print(self.key)
+        if self.left_child:
+            self.left.preorder()
+        if self.right_child:
+            self.right.preorder()
+
+    def postorder(self):
+        if self != None:
+            self.get_left_child().postorder
+            self.get_right_child().postorder
+            print(self.get_root_val())
+
 def main():
     r = BinaryTree('a')
     print(r.get_root_val())
