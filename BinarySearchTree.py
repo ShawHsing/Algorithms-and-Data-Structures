@@ -96,5 +96,10 @@ class BinarySearchTree:
                     self.parent.right_child = self.left_child
                 self.left_child.parent = self.parent
             else:
+                if self.is_left_child():
+                    self.parent.left_child = self.right_child
+                else:
+                    self.parent.right_child = self.right_child
+                self.right_child.parent = self.parent
                 
         
